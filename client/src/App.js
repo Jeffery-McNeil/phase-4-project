@@ -1,26 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import MediaList from './components/MediaList';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("/hello")
+    fetch("/media")
       .then((r) => r.json())
-      .then((data) => setCount(data.count));
+      .then((data) => setItems(data));
   }, []);
+
+  function handleDelete(id) {
+    fetch(`/media/${id}`, { method: "DELETE" })
+    const itemsToDisplay = items.filter((item) => item.id !== id)
+    setItems(itemsToDisplay)
+  }
+
+  function handleSubmit (event, newItem) {
+    event.preventDefault();
+    fetch("/media", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newItem)
+    }).then((response) => response.json())
+    .then((data)=> {
+      const itemsToDisplay = {...items, data}
+      console.log(itemsToDisplay)
+    });
+  }
+
+  console.log(items)
 
   return (
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route path="/testing">
-            <h1>Test Route</h1>
+          <Route path="/medialist">
+            <MediaList items={items} handleDelete={handleDelete} handleSubmit={handleSubmit}/>
+          </Route>
+          <Route path="/homepage">
           </Route>
           <Route path="/">
-            <h1>Page Count: {count}</h1>
           </Route>
         </Switch>
       </div>
