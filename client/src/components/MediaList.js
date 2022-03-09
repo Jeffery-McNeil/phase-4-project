@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import MediaCard from './MediaCard'
 import NavBar from './NavBar'
 
-function MediaList ({ items, handleSubmit, handleDelete }) {
+function MediaList () {
+    const [userItems, setUserItems] = useState([])
     const [formData, setFormData] = useState({
         name: "",
         image: "",
@@ -11,6 +12,12 @@ function MediaList ({ items, handleSubmit, handleDelete }) {
         company: "",
         rating: ""
     })
+
+    useEffect(() => {
+        fetch(`/user_media/${localStorage.user}`)
+          .then((r) => r.json())
+          .then((data) => setUserItems(data));
+      }, []);
 
     function onSubmit (event) {
         handleSubmit(event, formData )
@@ -23,13 +30,30 @@ function MediaList ({ items, handleSubmit, handleDelete }) {
             ...formData,
             [name]: value,
         });
-        console.log(formData)
+    }
+
+    function handleDelete(id) {
+        fetch(`/categories/${id}`, { method: "DELETE" })
+        const itemsToDisplay = userItems.filter((item) => item.id !== id)
+        setUserItems(itemsToDisplay)
+    }
+    
+    function handleSubmit (event, newItem) {
+    event.preventDefault();
+    fetch(`/media`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newItem)
+    }).then((response) => response.json())
+    .then((data)=> {setUserItems([...userItems, data])});
     }
 
     return (
         <div>
-            <NavBar/>
-            {items.map((item)=> {
+            <NavBar />
+            {userItems.map((item)=> {
                 return (
                 <MediaCard key={item.name} item={item} handleDelete={handleDelete}/>
             )})}

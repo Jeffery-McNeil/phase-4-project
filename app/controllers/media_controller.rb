@@ -1,7 +1,12 @@
 class MediaController < ApplicationController
 
     def index 
-        media = Medium.all
+        media = Medium.all.select { |m| m.users.ids.exclude?(session[:user_id])}
+        render json: media, status: :ok
+    end
+
+    def user_media
+        media = User.find(params[:id]).media
         render json: media, status: :ok
     end
 

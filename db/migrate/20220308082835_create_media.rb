@@ -7,6 +7,7 @@ class CreateMedia < ActiveRecord::Migration[7.0]
       t.string :artist
       t.string :company
       t.integer :rating
+      t.string :category
 
       t.timestamps
     end
