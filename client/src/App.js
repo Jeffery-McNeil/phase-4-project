@@ -44,6 +44,12 @@ function App() {
     })
   }
 
+  function handleDelete(id) {
+    fetch(`/media/${id}`, { method: "DELETE" })
+    const itemsToDisplay = items.filter((item) => item.id !== id)
+    setItems(itemsToDisplay)
+}
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -52,7 +58,7 @@ function App() {
             <MediaList />
           </Route>
           <Route path="/homepage">
-            <HomePage items={items} handleAdd={handleAdd} toggle={toggle} setToggle={setToggle} />
+            <HomePage items={items} handleAdd={handleAdd} toggle={toggle} setToggle={setToggle} handleDelete={handleDelete} />
           </Route>
           <Route path="/signup">
             <SignUp />

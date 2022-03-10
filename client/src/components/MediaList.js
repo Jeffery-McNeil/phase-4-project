@@ -4,6 +4,7 @@ import NavBar from './NavBar'
 
 function MediaList () {
     const [userItems, setUserItems] = useState([])
+    const [errors, setErrors] = useState("")
     const [formData, setFormData] = useState({
         name: "",
         image: "",
@@ -47,7 +48,13 @@ function MediaList () {
         },
         body: JSON.stringify(newItem)
     }).then((response) => response.json())
-    .then((data)=> {setUserItems([...userItems, data])});
+    .then((data)=> {
+        if (data.errors) {
+            setErrors(data.errors)
+        }
+        else {
+            setUserItems([...userItems, data])
+        }})
     }
 
     return (
@@ -67,6 +74,7 @@ function MediaList () {
                 <input type={"text"} name="rating" placeholder="rating 1-10" value={formData.rating} onChange={handleChange}></input>
                 <input type={"submit"}></input>
             </form>
+            <h1>{errors}</h1>
         </div>
     )
 
