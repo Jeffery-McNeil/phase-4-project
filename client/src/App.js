@@ -5,6 +5,7 @@ import MediaList from './components/MediaList';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import HomePage from './components/HomePage'
+import ItemInfo from './components/ItemInfo'
 
 function App() {
   const [items, setItems] = useState([]);
@@ -45,7 +46,7 @@ function App() {
   }
 
   function handleDelete(id) {
-    fetch(`/media/${id}`, { method: "DELETE" })
+    fetch(`/media/${id}`, { method: "DELETE" }) 
     const itemsToDisplay = items.filter((item) => item.id !== id)
     setItems(itemsToDisplay)
 }
@@ -62,6 +63,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignUp />
+          </Route>
+          <Route path='/ItemInfo'>
+            <ItemInfo handleDelete={handleDelete}/>
           </Route>
           <Route path="/">
             <Login />
