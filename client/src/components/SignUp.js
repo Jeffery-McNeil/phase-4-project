@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useHistory } from 'react-router-dom'
+import '../css/SignUp.css'
 
 function SignUp() {
     const [username, setUsername] = useState("");
@@ -37,33 +38,36 @@ function SignUp() {
 
 
     return (
-      <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <label htmlFor="password_confirmation">Confirm Password:</label>
-        <input
-          type="password"
-          id="password_confirmation"
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
-      <h2>{errorMessage}</h2>
-      </>
+      <div className="bg-layer">
+        <h1 id="title">Create an Account</h1>
+        <article className="signup">
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label htmlFor="password_confirmation">Confirm Password</label>
+            <input
+              type="password"
+              id="password_confirmation"
+              value={passwordConfirmation}
+              onChange={(e) => setPasswordConfirmation(e.target.value)}
+            />
+            <button id="submit" type="submit">Submit</button>
+          </form>
+          <h2>{errorMessage}</h2>
+        </article>
+      </div>
     );
   }
 

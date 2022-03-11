@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import SuggestionCard from './SuggestionCard'
 import NavBar from './NavBar'
+import '../css/HomePage.css'
 
 function HomePage ({ items, handleAdd, toggle, setToggle, handleDelete }) {
 
@@ -10,12 +11,13 @@ function HomePage ({ items, handleAdd, toggle, setToggle, handleDelete }) {
 
     return (
         <div>
-            <NavBar></NavBar>
-            <header>Your Mom</header>
-            <article>Service Explanation</article>
-            {items.map((item)=> { return (
-                <SuggestionCard key={item.name} item={item} handleAdd={handleAdd} handleDelete={handleDelete}/>
-            )})}
+            <NavBar />
+            <h1 className='header'>Find and keep track of your favorite music, movies and TV shows, add and change your ratings</h1>
+            <div className='homepage-container'>
+                {items.map((item)=> { return (
+                    <SuggestionCard key={item.name} item={item} handleAdd={handleAdd} handleDelete={handleDelete}/>
+                )})}
+            </div>
         </div>
     )
 }

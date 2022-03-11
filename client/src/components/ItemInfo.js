@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../css/ItemInfo.css'
 
 function ItemInfo ({ handleDelete }) {
     const [item, setItem] = useState([])
@@ -16,6 +17,7 @@ function ItemInfo ({ handleDelete }) {
 
     function onDelete() {
         handleDelete(item.id)
+        window.location.href = 'homepage'
     }
 
     function handleClick (event) {
@@ -37,48 +39,54 @@ function ItemInfo ({ handleDelete }) {
             })          
     }
 
-    console.log(item)
+    console.log(item.category)
 
     switch (item.category) {        
-    case 'Movie':
+    case 'music':
         return (
-            <article>
-                <button className="delete" onClick={onDelete}>x</button>
-                <h3>{item.name}</h3>
-                <img src={item.image} alt="album cover"/>
-                <p>Description: {item.description}</p>
-                <p>Artist: {item.artist}</p>
-                <p>Record Company: {item.company}</p>
-                <p>Rating: {item.rating}</p>
-                <button onClick={handleClick} value={true}>+</button>
-                <button onClick={handleClick} value={null}>-</button>
-            </article> )
-    case 'TV show':
+            <article className='info-card'>
+                <button className="info-delete" onClick={onDelete}>x</button>
+                <h3 className='info-name'>{item.name}</h3>
+                <img className='info-image' src={item.image} alt="album cover"/>
+                <div className='info-details'>
+                    <p className='info-description'>Description: {item.description}</p>
+                    <p className='info-creator'>Artist: {item.artist}</p>
+                    <p className='info-company'>Record Company: {item.company}</p>
+                    <p className='info-rating'>Rating: {item.rating}</p>
+                    <button className='info-button-left' onClick={handleClick} value={true}>-</button>
+                    <button className='info-button-right' onClick={handleClick} value={null}>+</button>
+                </div>
+            </article>)
+    case 'Book':
         return (    
-            <article>
-                <button className="delete" onClick={onDelete}>x</button>
-                <h3>{item.name}</h3>
-                <img src={item.image} alt="album cover"/>
-                <p>Description: {item.description}</p>
-                <p>Artist: {item.artist}</p>
-                <p>Record Company: {item.company}</p>
-                <p>Rating: {item.rating}</p>
-                <button onClick={handleClick} value={true}>+</button>
-                <button onClick={handleClick} value={null}>-</button>
+            <article className='info-card'>
+                <button className="info-delete" onClick={onDelete}>x</button>
+                <h3 className='info-name'>{item.name}</h3>
+                <img className='info-image' src={item.image} alt="album cover"/>
+                <div className='info-details'>
+                    <p className='info-description'>Description: {item.description}</p>
+                    <p className='info-creator'>Author: {item.artist}</p>
+                    <p className='info-company'>Publishing Company: {item.company}</p>
+                    <p className='info-rating'>Rating: {item.rating}</p>
+                    <button className='info-button-left' onClick={handleClick} value={true}>-</button>
+                    <button className='info-button-right' onClick={handleClick} value={null}>+</button>
+                </div>
             </article>)
     default: 
-        return (
-            <article>
-                <button className="delete" onClick={onDelete}>x</button>
-                <h3>{item.name}</h3>
-                <img src={item.image} alt="album cover"/>
-                <p>Description: {item.description}</p>
-                <p>Artist: {item.artist}</p>
-                <p>Record Company: {item.company}</p>
-                <p>Rating: {item.rating}</p>
-                <button onClick={handleClick} value={true}>+</button>
-                <button onClick={handleClick} value={null}>-</button>
-            </article> )
+        return (    
+            <article className='info-card'>
+                <button className="info-delete" onClick={onDelete}>x</button>
+                <h3 className='info-name'>{item.name}</h3>
+                <img className='info-image' src={item.image} alt="album cover"/>
+                <div className='info-details'>
+                    <p className='info-description'>Description: {item.description}</p>
+                    <p className='info-creator'>Director: {item.artist}</p>
+                    <p className='info-company'>Production Company: {item.company}</p>
+                    <p className='info-rating'>Rating: {item.rating}</p>
+                    <button className='info-button-left' onClick={handleClick} value={true}>-</button>
+                    <button className='info-button-right' onClick={handleClick} value={null}>+</button>
+                </div>
+            </article>)
     }}
 
 export default ItemInfo; 

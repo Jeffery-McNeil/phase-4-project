@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import MediaCard from './MediaCard'
 import NavBar from './NavBar'
+import '../css/MediaList.css'
 
 function MediaList () {
     const [userItems, setUserItems] = useState([])
@@ -11,6 +12,7 @@ function MediaList () {
         description: "",
         artist: "",
         company: "",
+        category: "",
         rating: ""
     })
 
@@ -58,24 +60,29 @@ function MediaList () {
     }
 
     return (
-        <div>
+        <>
             <NavBar />
-            {userItems.map((item)=> {
-                return (
-                <MediaCard key={item.name} item={item} handleDelete={handleDelete}/>
-            )})}
-            <form onSubmit={onSubmit}>
-                <h1>Add your favorites!</h1>
-                <input type={"text"} name="name" placeholder="name" value={formData.name} onChange={handleChange}></input>
-                <input type={"text"} name="image" placeholder="image" value={formData.image} onChange={handleChange}></input>
-                <input type={"text"} name="description" placeholder="description" value={formData.description} onChange={handleChange}></input>
-                <input type={"text"} name="artist" placeholder="artist" value={formData.artist} onChange={handleChange}></input>
-                <input type={"text"} name="company" placeholder="company" value={formData.company} onChange={handleChange}></input>
-                <input type={"text"} name="rating" placeholder="rating 1-10" value={formData.rating} onChange={handleChange}></input>
-                <input type={"submit"}></input>
-            </form>
-            <h1>{errors}</h1>
-        </div>
+            <div className="medialist-container">
+                {userItems.map((item)=> {
+                    return (
+                    <MediaCard key={item.name} item={item} handleDelete={handleDelete}/>
+                )})}
+            </div>
+            <div className="submit-form">
+                <form onSubmit={onSubmit}>
+                    <h1>Add your favorites!</h1>
+                    <input type={"text"} name="name" placeholder="name" value={formData.name} onChange={handleChange}></input>
+                    <input type={"text"} name="image" placeholder="image" value={formData.image} onChange={handleChange}></input>
+                    <input type={"text"} name="description" placeholder="description" value={formData.description} onChange={handleChange}></input>
+                    <input type={"text"} name="artist" placeholder="artist" value={formData.artist} onChange={handleChange}></input>
+                    <input type={"text"} name="company" placeholder="company" value={formData.company} onChange={handleChange}></input>
+                    <input type={"text"} name="category" placeholder="category" value={formData.category} onChange={handleChange}></input>
+                    <input type={"text"} name="rating" placeholder="rating 1-10" value={formData.rating} onChange={handleChange}></input>
+                    <input type={"submit"}></input>
+                </form>
+            </div>
+            <h1>{errors}</h1>            
+        </>
     )
 
 }

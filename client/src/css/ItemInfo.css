@@ -1,0 +1,88 @@
+.info-card {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 600px;
+    padding: 5px;
+    margin: 50px 3px;
+    background-color: #404040;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px 70px;
+    padding-bottom: 0;
+    transition: 0.8s ease;
+    color: #6F8FAF;
+    left: 5%;
+}
+
+.info-image {
+    width: 25%;
+}
+
+.info-details {
+    position: absolute;
+    text-align: left;
+    left: 40%;
+    top: 45%;
+}
+
+.info-delete {
+    position: absolute;
+    right: .6%;
+    top: -2%;
+    border-radius: 50%;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid dimgray;
+    outline: none;
+    color: #6F8FAF;
+    transition: 0.25s;
+    cursor: pointer;
+    background-color: #404040;
+}
+
+.info-button-left {
+    position: absolute;
+    left: 10%;
+    bottom: -3.5%;
+    border-top: hidden;
+    border-bottom: hidden;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid dimgray;
+    outline: none;
+    color: #6F8FAF;
+    transition: 0.25s;
+    cursor: pointer;
+    background-color: #404040;
+}
+.info-button-left:hover {
+    background: darkslategray;
+}
+
+.info-button-right {
+    position: absolute;
+    left: 13%;
+    bottom: -3.5%;
+    border-top: hidden;
+    border-bottom: hidden;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid dimgray;
+    outline: none;
+    color: #6F8FAF;
+    transition: 0.25s;
+    cursor: pointer;
+    background-color: #404040;
+}
+.info-button-right:hover {
+    background: darkslategray;
+}
+

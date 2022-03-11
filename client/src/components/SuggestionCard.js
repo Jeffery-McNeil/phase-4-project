@@ -10,16 +10,20 @@ function SuggestionCard ({ item, handleAdd, handleDelete }) {
         handleDelete(item.id)
     }
 
+    function onClick (e) {
+        localStorage.setItem('ItemInfo', `${item.id}`)
+        window.location.href = 'ItemInfo'
+    }
+
     return (
-        <article>
-            <button onClick={onDelete}>x</button>
-            <h3>{item.name}</h3>
-            <img src={item.image} alt="album cover"/>
-            <p>Description: {item.description}</p>
-            <p>Artist: {item.artist}</p>
-            <p>Record Company: {item.company}</p>
-            <p>Rating: {item.rating}</p>
-            <button onClick={handleClick}>Add to List</button>
+        <article className="card">
+            <button className="delete-button" onClick={onDelete}>x</button>
+            <h3 className="name" >{item.name}</h3>
+            <img className="image" src={item.image} alt="album cover"/>
+            <div className="button-container">
+                <button className="card-button-left" onClick={handleClick}>Add to List</button>
+                <button className="card-button-right" onClick={onClick}>More Info</button>
+            </div>
         </article>
     )
 }

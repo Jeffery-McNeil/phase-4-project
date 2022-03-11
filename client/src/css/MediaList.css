@@ -1,0 +1,38 @@
+.medialist-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 15% 0 15%;
+    padding-bottom: 350px;
+}
+
+.submit-form {
+    background-color: #404040;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    color: #6F8FAF; 
+    height: 115px;
+}
+
+.submit-form input[type="submit"] {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    bottom: -15%;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid dimgray;
+    outline: none;
+    color: #6F8FAF;
+    transition: 0.25s;
+    cursor: pointer;
+    background-color: #404040;
+  }
+  .submit-form input[type="submit"]:hover {
+    background: rgb(245, 245, 247);
+  }

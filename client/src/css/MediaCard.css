@@ -1,0 +1,100 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 320px;
+    padding: 5px;
+    margin: 50px 3px;
+    background-color: #404040;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px 70px;
+    padding-bottom: 0;
+    transition: 0.8s ease;
+    border-radius: 5%;
+    color: #6F8FAF;
+}
+
+.delete-button {
+    position: absolute;
+    right: 1%;
+    top: -5%;
+    border-radius: 50%;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid dimgray;
+    outline: none;
+    color: #6F8FAF;
+    transition: 0.25s;
+    cursor: pointer;
+    background-color: #404040;
+}
+.delete-button:hover {
+    background: darkslategray;
+}
+
+.card-button-left {
+    position: absolute;
+    left: 15%;
+    width: 35%;
+    bottom: -5%;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid dimgray;
+    outline: none;
+    color: #6F8FAF;
+    transition: 0.25s;
+    cursor: pointer;
+    background-color: #404040;
+}
+.card-button-left:hover {
+    background: darkslategray;
+}
+
+.card-button-right {
+    position: absolute;
+    right: 15%;
+    width: 35%;
+    bottom: -5%;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid dimgray;
+    outline: none;
+    color: #6F8FAF;
+    transition: 0.25s;
+    cursor: pointer;
+    background-color: #404040;
+}
+.card-button-right:hover {
+    background: darkslategray;
+}
+
+.card-button {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    bottom: -5%;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid dimgray;
+    outline: none;
+    color: #6F8FAF;
+    transition: 0.25s;
+    cursor: pointer;
+    background-color: #404040;
+}
+.card-button:hover {
+    background: darkslategray;
+}

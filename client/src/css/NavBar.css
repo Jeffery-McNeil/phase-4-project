@@ -1,0 +1,47 @@
+body {
+    background-color: dimgray;
+}
+
+.nav {
+    background-color: #404040;
+    position: relative;
+}
+
+.nav-text {
+    color: #6F8FAF;
+}
+
+.one{
+    display: inline-block;    
+    margin-left: 65%; 
+}
+
+.two{
+    display: inline-block;
+    margin-left: 5%;
+}
+
+.three{
+    display: inline-block;
+    margin-left: 5%;
+}
+
+.nav-button {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid dimgray;
+    border-top: hidden;
+    border-bottom: hidden;
+    padding: 14px 40px;
+    outline: none;
+    color: #6F8FAF;
+    transition: 0.25s;
+    cursor: pointer;
+    background-color: #404040;
+  }
+.nav-button:hover {
+    background: darkslategray;
+}
