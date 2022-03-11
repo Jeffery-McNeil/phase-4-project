@@ -76,11 +76,11 @@ category: "music",  artist: "King Gizzard and the Lizard Wizard", company: "KGLW
 
 Medium.create( name: "Star Trek: The Next Generation", description: "Star Trek: The Next Generation (TNG) is an American science fiction television series created by Gene Roddenberry. It originally aired from September 28, 1987 to May 23, 1994 in syndication, spanning 178 episodes over seven seasons. The third series in the Star Trek franchise, it is the second sequel to Star Trek: The Original Series.",
 image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Star_Trek_The_Next_Generation_Logo.svg", 
-category: "TV show", artist: "Gene Roddenberry", company: "Paramount", rating: 7)
+category: "TV Show", artist: "Gene Roddenberry", company: "Paramount", rating: 7)
 
 Medium.create( name: "Twin Peaks", description: "Twin Peaks is an American mystery-horror serial drama television series created by Mark Frost and David Lynch. It premiered on ABC on April 8, 1990, and ran for two seasons until its cancellation in 1991. In the years following its release, the show gained a devoted cult following and has been referenced in a wide variety of media",
 image: "https://upload.wikimedia.org/wikipedia/en/e/ea/TwinPeaks_openingshotcredits.jpg", 
-category: "TV show", artist: "David Lynch and Mark Frost", company: "Lynch/Frost Productions", rating: 8)
+category: "TV Show", artist: "David Lynch and Mark Frost", company: "Lynch/Frost Productions", rating: 8)
 
 Medium.create( name: "Mulholland Drive", description: "Mulholland Drive (stylized as Mulholland Dr.) is a 2001 surrealist neo-noir mystery film written and directed by David Lynch and starring Naomi Watts, Laura Harring, Justin Theroux, Ann Miller, Mark Pellegrino, and Robert Forster.",
 image: "https://upload.wikimedia.org/wikipedia/en/0/0f/Mulholland.png", 
@@ -127,7 +127,7 @@ image: "https://upload.wikimedia.org/wikipedia/en/c/c9/The_Galaxy%2C_and_the_Gro
 category: "Book", artist: "Becky Chambers", company: "Harper Voyager", rating: 7)
 
 Medium.create( name: "Foundation", description: "Foundation is a science fiction novel by American writer Isaac Asimov. It is the first published in his Foundation Trilogy (later expanded into the Foundation series). Foundation is a cycle of five interrelated short stories, first published as a single book by Gnome Press in 1951. Collectively they tell the early story of the Foundation, an institute founded by psychohistorian Hari Seldon to preserve the best of galactic civilization after the collapse of the Galactic Empire.",
-image: "https://en.wikipedia.org/wiki/Foundation_(Asimov_novel)#/media/File:Foundation_gnome.jpg", 
+image: "https://upload.wikimedia.org/wikipedia/en/2/25/Foundation_gnome.jpg", 
 category: "Book", artist: "Isaac Asimov", company: "Gnome Press", rating: 9)
 
 Medium.create( name: "The Left Hand of Darkness", description: "The Left Hand of Darkness is a science fiction novel by U.S. writer Ursula K. Le Guin. Published in 1969, it became immensely popular, and established Le Guin's status as a major author of science fiction. The novel is set in the fictional Hainish universe as part of the Hainish Cycle, a series of novels and short stories by Le Guin, which she introduced in the 1964 short story 'The Dowry of Angyar'. It was fourth in sequence of writing among the Hainish novels, preceded by City of Illusions, and followed by The Word for World Is Forest.",

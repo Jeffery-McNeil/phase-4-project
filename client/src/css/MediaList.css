@@ -36,3 +36,47 @@
   .submit-form input[type="submit"]:hover {
     background: rgb(245, 245, 247);
   }
+
+  .select::-ms-expand {
+    display: none;
+  }
+  
+  .select {
+      position: absolute;
+      height: 5.2%;
+      min-width: 10ch;
+      max-width: 30ch;
+      border: 1px solid var(--select-border);
+      padding: 0.25em 0.5em;
+      font-size: 1.25rem;
+      cursor: pointer;
+      line-height: 1.1;
+      background-color: #404040;
+      left: 4%;
+      top: 10.7%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      color: #6F8FAF;
+    }
+  
+  .select:hover {
+      background-color: darkslategray;
+  }
+
+  .search-bar {
+      position: absolute;
+      right: 1.2%;
+      top: 10.6%;
+      height: 5%;
+      background-color: #404040;
+      color: #6F8FAF;
+      text-align: center;
+      font-size: large;
+      width: 8%;
+  }
+
+  .search-bar:focus {
+      outline:none;
+      background-color: darkslategray;
+  }

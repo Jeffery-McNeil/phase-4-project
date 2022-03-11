@@ -10,6 +10,7 @@ import ItemInfo from './components/ItemInfo'
 function App() {
   const [items, setItems] = useState([]);
   const [toggle, setToggle] = useState(true)
+  const [filteredProducts, setFilteredProducts] = useState(items)
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -23,8 +24,21 @@ function App() {
   useEffect(() => {
     fetch("/media")
       .then((r) => r.json())
-      .then((data) => setItems(data));
+      .then((data) => {
+        setItems(data)
+        setFilteredProducts(data)
+      });
   }, [ toggle ]);
+
+  function handleChange(value) {
+    let category = value
+    if (category === "all") {
+        setFilteredProducts(items)
+    } else {
+    const itemsToDisplay = items.filter((item) => item.category === category)
+    setFilteredProducts(itemsToDisplay)
+    }
+  }
 
   function handleAdd (id) {
     fetch("/categories", {
@@ -40,16 +54,15 @@ function App() {
     .then((data)=> {
       console.log(data)
       let itemsToDisplay = items.filter((item)=> item.id !== data)
-      console.log(itemsToDisplay)
-      setItems(itemsToDisplay)
+      setFilteredProducts(itemsToDisplay)
     })
   }
 
   function handleDelete(id) {
     fetch(`/media/${id}`, { method: "DELETE" }) 
     const itemsToDisplay = items.filter((item) => item.id !== id)
-    setItems(itemsToDisplay)
-}
+    setFilteredProducts(itemsToDisplay)
+  }
 
   return (
     <BrowserRouter>
@@ -59,7 +72,7 @@ function App() {
             <MediaList />
           </Route>
           <Route path="/homepage">
-            <HomePage items={items} handleAdd={handleAdd} toggle={toggle} setToggle={setToggle} handleDelete={handleDelete} />
+            <HomePage filteredProducts={filteredProducts} handleChange={handleChange} handleAdd={handleAdd} toggle={toggle} setToggle={setToggle} handleDelete={handleDelete} />
           </Route>
           <Route path="/signup">
             <SignUp />

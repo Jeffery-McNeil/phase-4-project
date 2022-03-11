@@ -53,8 +53,8 @@ function ItemInfo ({ handleDelete }) {
                     <p className='info-creator'>Artist: {item.artist}</p>
                     <p className='info-company'>Record Company: {item.company}</p>
                     <p className='info-rating'>Rating: {item.rating}</p>
-                    <button className='info-button-left' onClick={handleClick} value={true}>-</button>
-                    <button className='info-button-right' onClick={handleClick} value={null}>+</button>
+                    <button className='info-button-left' onClick={handleClick} value={null}>-</button>
+                    <button className='info-button-right' onClick={handleClick} value={true}>+</button>
                 </div>
             </article>)
     case 'Book':
@@ -83,8 +83,8 @@ function ItemInfo ({ handleDelete }) {
                     <p className='info-creator'>Director: {item.artist}</p>
                     <p className='info-company'>Production Company: {item.company}</p>
                     <p className='info-rating'>Rating: {item.rating}</p>
-                    <button className='info-button-left' onClick={handleClick} value={true}>-</button>
-                    <button className='info-button-right' onClick={handleClick} value={null}>+</button>
+                    <button className='info-button-left' onClick={handleClick} value={null}>-</button>
+                    <button className='info-button-right' onClick={handleClick} value={true}>+</button>
                 </div>
             </article>)
     }}

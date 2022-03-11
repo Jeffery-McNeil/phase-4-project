@@ -3,8 +3,7 @@ class MediaController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
     def index 
-        # media = Medium.all.select { |m| m.users.ids.exclude?(session[:user_id])}
-        media = Medium.all
+        media = Medium.all.select { |m| m.users.ids.exclude?(session[:user_id])}
         render json: media, status: :ok
     end
 
